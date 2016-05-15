@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Request;
 use Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -47,6 +49,8 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
     }
+
+    
 
     /**
      * Create a new user instance after a valid registration.

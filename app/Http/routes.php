@@ -18,7 +18,10 @@ Route::get('/', function () {
 });
 
 $api->version('v1',function($api){
-   $api->get('hello',function(){
-        return "Hello";
-   });
+
+    $api->get('getUsers','App\Http\Controllers\homeController@index');
+    $api->post('addUser','App\Http\Controllers\homeController@insertUser');
+    $api->get('getUserGroups/{user_id}','App\Http\Controllers\groupsController@index');
+
+    $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
 });
