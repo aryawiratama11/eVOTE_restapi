@@ -2,26 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
-class homeController extends Controller
+class pollController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param $group_id
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($group_id)
     {
-//        $users = DB::select('select * from users')->get();
-        $users = DB::table('users')->get();
+        $polls = DB::table('group_polls')
+            ->join('groups', 'groups.group_ID', '=', 'group_polls.grp_id')
+            ->join('polls', 'polls.poll_ID', '=', 'group_polls.pll_id')
+            ->join('users', 'users.id', '=', 'group_polls.usr_id')
+            ->select('polls.*','groups.group_name','users.name')
+            ->where('groups.group_ID',$group_id)
+            ->get();
 
-        return $users;
+        return $polls;
     }
 
     /**
@@ -31,60 +35,38 @@ class homeController extends Controller
      */
     public function create()
     {
-        //DB::insert('insert into users (id, name,password) values (?, ?)', [1, 'Dayle']);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function insertUser(Request $request)
-    {
-        $user = new User();
-        $user->name = $request->name;
-        $user->password = bcrypt($request->password);
-        $user->save();
-
-        return $this->response->created();
-    }
-
     public function store(Request $request)
     {
         //
     }
 
-    public function authenticate(Request $request)
-    {
-        $user = User::where('name', $request->name)->first();
-        if (empty($user) || empty($request->password)) {
-            return "not found";
-        }
-
-        if (Hash::check( $request->password,$user->password)) {
-            //authenticated
-            return response()->json(['name' => $user->name, 'id' => $user->id]);
-        } else {
-            return "not found";
-        }
-    }
-
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param $poll_id
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function show($poll_id)
     {
-        //
+        $data = DB::table('polls')->where('poll_ID', $poll_id)->get();
+        
+        return $data;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,8 +77,8 @@ class homeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -107,7 +89,7 @@ class homeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
