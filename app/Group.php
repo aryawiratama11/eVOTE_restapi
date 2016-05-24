@@ -9,4 +9,14 @@ class Group extends Model
     protected $table = 'groups';
 
     public $timestamps=false;
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User','user_group');
+
+    }
+
 }

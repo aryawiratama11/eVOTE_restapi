@@ -20,10 +20,11 @@ Route::get('/', function () {
 $api->version('v1',function($api){
     
     $api->get('getUsers','App\Http\Controllers\homeController@index');
-    $api->post('addUser','App\Http\Controllers\homeController@insertUser');
     $api->get('getUserGroups/{user_id}','App\Http\Controllers\groupsController@index');
     $api->get('getGroupPolls/{group_id}','App\Http\Controllers\pollController@index');
     $api->get('getPollInfo/{poll_id}','App\Http\Controllers\pollController@show');
 
+
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
+    $api->post('addUser','App\Http\Controllers\homeController@insertUser');
 });

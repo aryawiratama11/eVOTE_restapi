@@ -14,4 +14,19 @@ class Poll extends Model
     protected $table = 'polls';
 
     public $timestamps=false;
+
+    public function groups()
+    {
+
+        return $this->belongsToMany('App\Group','group_poll_user');
+
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User','group_poll_user');
+    }
+
+
+    
 }

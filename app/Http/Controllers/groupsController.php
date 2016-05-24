@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Group;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
@@ -17,12 +19,15 @@ class groupsController extends Controller
      */
     public function index($user_id)
     {
-        $users = DB::table('user_group')
-        ->join('groups', 'groups.group_ID', '=', 'user_group.grp_id')
-        ->join('users', 'users.id', '=', 'user_group.usr_id')
-        ->select('groups.*')
-        ->where('users.id',$user_id)
-        ->get();
+
+        
+        $users = User::find($user_id)->groups()->get()->toArray();
+//        $users = DB::table('user_group')
+//        ->join('groups', 'groups.group_ID', '=', 'user_group.grp_id')
+//        ->join('users', 'users.id', '=', 'user_group.usr_id')
+//        ->select('groups.*')
+//        ->where('users.id',$user_id)
+//        ->get();
 
         return $users;
     }

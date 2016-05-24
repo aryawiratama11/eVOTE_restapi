@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Poll;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
@@ -17,12 +18,14 @@ class pollController extends Controller
      */
     public function index($group_id)
     {
-        $polls = DB::table('group_polls')
-            ->join('groups', 'groups.group_ID', '=', 'group_polls.grp_id')
-            ->join('polls', 'polls.poll_ID', '=', 'group_polls.pll_id')
-            ->join('users', 'users.id', '=', 'group_polls.usr_id')
+
+
+        $polls = DB::table('group_poll_user')
+            ->join('groups', 'groups.id', '=', 'group_poll_user.group_id')
+            ->join('polls', 'polls.id', '=', 'group_poll_user.poll_id')
+            ->join('users', 'users.id', '=', 'group_poll_user.user_id')
             ->select('polls.*','groups.group_name','users.name')
-            ->where('groups.group_ID',$group_id)
+            ->where('groups.id',$group_id)
             ->get();
 
         return $polls;
@@ -58,7 +61,9 @@ class pollController extends Controller
      */
     public function show($poll_id)
     {
-        $data = DB::table('polls')->where('poll_ID', $poll_id)->get();
+        //$data = DB::table('polls')->where('poll_ID', $poll_id)->get();
+
+        $data = Poll::where('poll_ID',$poll_id)->first()->toArray();
         
         return $data;
     }
