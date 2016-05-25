@@ -32,7 +32,7 @@ class homeController extends Controller
      */
     public function create()
     {
-        //DB::insert('insert into users (id, name,password) values (?, ?)', [1, 'Dayle']);
+        //
     }
 
     /**

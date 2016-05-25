@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5201fc38-8e68-45a1-993a-7f7fbf43bc70" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Group_Poll.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/User_group.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Group.php" afterPath="$PROJECT_DIR$/app/Group.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/groupsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/groupsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/homeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/homeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/pollController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/pollController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Poll.php" afterPath="$PROJECT_DIR$/app/Poll.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
     </list>
     <ignored path="eVOTE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,8 +71,8 @@
       <file leaf-file-name="Group.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Group.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="143">
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="329">
+              <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -101,11 +101,21 @@
       <file leaf-file-name="groupsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/groupsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="1717">
+              <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,30 +123,27 @@
       <file leaf-file-name="homeController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/homeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            <state relative-caret-position="578">
+              <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
-                <marker date="1464116787676" expanded="true" signature="581:690" placeholder="/** * Show t... " />
-                <marker date="1464116787676" expanded="true" signature="748:799" placeholder="insert into users... " />
-                <marker date="1464116787676" expanded="true" signature="828:986" placeholder="/** * Store " />
-                <marker date="1464116787676" expanded="true" signature="1766:1887" placeholder="/** * Displa... " />
-                <marker date="1464116787676" expanded="true" signature="1946:2085" placeholder="/** * Show t... " />
-                <marker date="1464116787676" expanded="true" signature="2144:2324" placeholder="/** * Update... " />
-                <marker date="1464116787676" expanded="true" signature="2403:2536" placeholder="/** * Remove... " />
+                <marker date="1464118349164" expanded="true" signature="581:690" placeholder="/** * Show t... " />
+                <marker date="1464118349164" expanded="true" signature="748:906" placeholder="/** * Store " />
+                <marker date="1464118349164" expanded="true" signature="1686:1807" placeholder="/** * Displa... " />
+                <marker date="1464118349164" expanded="true" signature="1866:2005" placeholder="/** * Show t... " />
+                <marker date="1464118349164" expanded="true" signature="2064:2244" placeholder="/** * Update... " />
+                <marker date="1464118349164" expanded="true" signature="2323:2456" placeholder="/** * Remove... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pollController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pollController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/pollController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-              <folding>
-                <element signature="e#40#53#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,13 +176,13 @@
         <option value="$PROJECT_DIR$/app/User_group.php" />
         <option value="$PROJECT_DIR$/app/Choice.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/app/Group.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/groupsController.php" />
         <option value="$PROJECT_DIR$/app/Poll.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/pollController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/homeController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Group.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/groupsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/homeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/pollController.php" />
       </list>
     </option>
   </component>
@@ -381,12 +388,12 @@
       <workItem from="1463909751414" duration="3435000" />
       <workItem from="1464076414612" duration="2238000" />
       <workItem from="1464098126375" duration="608000" />
-      <workItem from="1464105684188" duration="5486000" />
+      <workItem from="1464105684188" duration="9204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51987000" />
+    <option name="totallyTimeSpent" value="55705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="-3" width="1329" height="771" extended-state="6" />
@@ -450,13 +457,12 @@
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1464116787676" expanded="true" signature="581:690" placeholder="/** * Show t... " />
-            <marker date="1464116787676" expanded="true" signature="748:799" placeholder="insert into users... " />
-            <marker date="1464116787676" expanded="true" signature="828:986" placeholder="/** * Store " />
-            <marker date="1464116787676" expanded="true" signature="1766:1887" placeholder="/** * Displa... " />
-            <marker date="1464116787676" expanded="true" signature="1946:2085" placeholder="/** * Show t... " />
-            <marker date="1464116787676" expanded="true" signature="2144:2324" placeholder="/** * Update... " />
-            <marker date="1464116787676" expanded="true" signature="2403:2536" placeholder="/** * Remove... " />
+            <marker date="1464118349164" expanded="true" signature="581:690" placeholder="/** * Show t... " />
+            <marker date="1464118349164" expanded="true" signature="748:906" placeholder="/** * Store " />
+            <marker date="1464118349164" expanded="true" signature="1686:1807" placeholder="/** * Displa... " />
+            <marker date="1464118349164" expanded="true" signature="1866:2005" placeholder="/** * Show t... " />
+            <marker date="1464118349164" expanded="true" signature="2064:2244" placeholder="/** * Update... " />
+            <marker date="1464118349164" expanded="true" signature="2323:2456" placeholder="/** * Remove... " />
           </folding>
         </state>
       </provider>
@@ -539,13 +545,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_05_14_125112_create_users_table.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -730,32 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/groupsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -772,37 +745,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/pollController.php">
+    <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="363">
+          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/homeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="578">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
-            <marker date="1464116787676" expanded="true" signature="581:690" placeholder="/** * Show t... " />
-            <marker date="1464116787676" expanded="true" signature="748:799" placeholder="insert into users... " />
-            <marker date="1464116787676" expanded="true" signature="828:986" placeholder="/** * Store " />
-            <marker date="1464116787676" expanded="true" signature="1766:1887" placeholder="/** * Displa... " />
-            <marker date="1464116787676" expanded="true" signature="1946:2085" placeholder="/** * Show t... " />
-            <marker date="1464116787676" expanded="true" signature="2144:2324" placeholder="/** * Update... " />
-            <marker date="1464116787676" expanded="true" signature="2403:2536" placeholder="/** * Remove... " />
+            <marker date="1464118349164" expanded="true" signature="581:690" placeholder="/** * Show t... " />
+            <marker date="1464118349164" expanded="true" signature="748:906" placeholder="/** * Store " />
+            <marker date="1464118349164" expanded="true" signature="1686:1807" placeholder="/** * Displa... " />
+            <marker date="1464118349164" expanded="true" signature="1866:2005" placeholder="/** * Show t... " />
+            <marker date="1464118349164" expanded="true" signature="2064:2244" placeholder="/** * Update... " />
+            <marker date="1464118349164" expanded="true" signature="2323:2456" placeholder="/** * Remove... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="70" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/groupsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+          <folding>
+            <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="329">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/pollController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
           <folding />
         </state>
       </provider>

@@ -27,4 +27,5 @@ $api->version('v1',function($api){
 
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
     $api->post('addUser','App\Http\Controllers\homeController@insertUser');
+    $api->post('addGroup','App\Http\Controllers\groupsController@insertGroup');
 });

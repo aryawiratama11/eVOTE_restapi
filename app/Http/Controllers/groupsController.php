@@ -20,7 +20,6 @@ class groupsController extends Controller
     public function index($user_id)
     {
 
-        
         $users = User::find($user_id)->groups()->get()->toArray();
 //        $users = DB::table('user_group')
 //        ->join('groups', 'groups.group_ID', '=', 'user_group.grp_id')
@@ -48,9 +47,14 @@ class groupsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function insertGroup(Request $request)
     {
-        //
+        $group = new Group();
+        $group->group_name = $request->group_name;
+        $group->description = $request->description;
+        $group->save();
+
+        return $this->response->created();
     }
 
     /**

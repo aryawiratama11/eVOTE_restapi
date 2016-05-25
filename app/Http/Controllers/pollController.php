@@ -63,7 +63,7 @@ class pollController extends Controller
     {
         //$data = DB::table('polls')->where('poll_ID', $poll_id)->get();
 
-        $data = Poll::where('poll_ID',$poll_id)->first()->toArray();
+        $data = Poll::where('id',$poll_id)->first()->toArray();
         
         return $data;
     }
