@@ -115,4 +115,12 @@ class homeController extends Controller
     {
         //
     }
+
+    public function getVote($user_id,$poll_id)
+    {
+        $vote = User::find($user_id)->votes()->where('poll_ID',$poll_id)->get()->toArray();
+
+        return $vote;
+
+    }
 }

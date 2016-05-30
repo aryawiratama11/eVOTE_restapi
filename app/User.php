@@ -45,4 +45,10 @@ class User extends Model implements AuthenticatableContract,
         return $this->belongsToMany('App\Group','user_group');
 
     }
+
+    public function votes()
+    {
+        return $this->hasMany('App\Vote');
+
+    }
 }

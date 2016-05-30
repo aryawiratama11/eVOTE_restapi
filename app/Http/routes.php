@@ -23,6 +23,10 @@ $api->version('v1',function($api){
     $api->get('getUserGroups/{user_id}','App\Http\Controllers\groupsController@index');
     $api->get('getGroupPolls/{group_id}','App\Http\Controllers\pollController@index');
     $api->get('getPollInfo/{poll_id}','App\Http\Controllers\pollController@show');
+    $api->get('getPollChoices/{poll_id}','App\Http\Controllers\pollController@getChoices');
+    $api->get('getUserVote/{user_id}/poll/{poll_id}','App\Http\Controllers\homeController@getVote');
+    
+
 
 
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');

@@ -101,4 +101,13 @@ class pollController extends Controller
     {
         //
     }
+
+    public function getChoices($poll_ID)
+    {
+        $data = Poll::find($poll_ID)->choices()->get()->toArray();
+
+        return $data;
+    }
+    
+    
 }

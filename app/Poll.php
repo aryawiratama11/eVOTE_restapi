@@ -27,6 +27,10 @@ class Poll extends Model
         return $this->belongsToMany('App\User','group_poll_user');
     }
 
+    public function choices()
+    {
+        return $this->hasMany('App\Choice');
+    }
 
     
 }
