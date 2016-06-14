@@ -8,5 +8,7 @@ class Choice extends Model
 {
     protected $table = 'choices';
 
+    protected $fillable = ['poll_ID', 'choice'];
+
     public $timestamps=false;
 }

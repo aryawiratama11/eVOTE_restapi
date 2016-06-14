@@ -11,14 +11,31 @@ class PollsTest extends TestCase
      *
      * @return void
      */
-    public function testInsertGroup()
+//    public function testInsertGroup()
+//    {
+//
+//        $response = $this->call('POST', '/api/addPoll', ['pll_name' => 'test poll', 'description' => 'testing!',
+//        'editable' => 'NO', 'deadline' => '2030-05-05']);
+//
+//        $this->assertEquals(201,$response->status());
+//    }
+//
+//    public function testInsertGrpUsrAdPll()
+//    {
+//
+//        $response = $this->call('POST', '/api/addUserPollGroup',
+//            ['pll_name' => 'test poll', 'description' => 'testing!','createdby' => 9,'group'=> 1]);
+//
+//        $this->assertEquals(201,$response->status());
+//    }
+
+    public function testGetByName()
     {
 
-        $response = $this->call('POST', '/api/addPoll', ['pll_name' => 'test poll', 'description' => 'testing!',
-        'editable' => 'NO', 'deadline' => '2030-05-05']);
+        $response = $this->call('POST', '/api/getPollByName',
+            ['pll_name' => 'test poll', 'description' => 'testing!','createdby' => 9,'group'=> 1]);
 
-        $this->assertEquals(201,$response->status());
+        $this->assertEquals(200,$response->status());
+
     }
-
-    
 }

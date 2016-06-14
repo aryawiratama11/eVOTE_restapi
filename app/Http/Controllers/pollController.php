@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Group_Poll_User;
 use App\Poll;
 use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
@@ -37,9 +38,17 @@ class pollController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function insertUserPoll(Request $request)
     {
-        //
+        $poll = Poll::where('pll_name',$request->pll_name)->where('description',$request->description)->first();
+
+        $u_pg = new Group_Poll_User();
+        $u_pg->poll_ID = $poll->id;
+        $u_pg->user_ID = $request->createdby;
+        $u_pg->group_ID = $request->group;
+        $u_pg->save();
+
+        return $poll;
     }
 
     /**
@@ -81,12 +90,17 @@ class pollController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function edit($id)
+    public function getPollByName(Request $request)
     {
-        //
+        $poll = Poll::where('pll_name',$request->pll_name)->where('description',$request->description)->first();
+
+        return $poll;
+
+
     }
 
     /**

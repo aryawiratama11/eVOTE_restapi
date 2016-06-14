@@ -25,13 +25,16 @@ $api->version('v1',function($api){
     $api->get('getPollInfo/{poll_id}','App\Http\Controllers\pollController@show');
     $api->get('getPollChoices/{poll_id}','App\Http\Controllers\pollController@getChoices');
     $api->get('getUserVote/{user_id}/poll/{poll_id}','App\Http\Controllers\homeController@getVote');
-    
 
 
-
+    $api->post('getPollByName','App\Http\Controllers\pollController@getPollByName');
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
     $api->post('addUser','App\Http\Controllers\homeController@insertUser');
     $api->post('addGroup','App\Http\Controllers\groupsController@insertGroup');
     $api->post('addPoll','App\Http\Controllers\pollController@insertPoll');
     $api->post('addUserGroup','App\Http\Controllers\groupsController@insertUserGroup');
+    $api->post('addUserPollGroup','App\Http\Controllers\pollController@insertUserPoll');
+    $api->post('addPollChoices','App\Http\Controllers\voteController@insertPollChoices');
+    
+
 });
