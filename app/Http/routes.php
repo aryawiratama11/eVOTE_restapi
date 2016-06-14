@@ -32,4 +32,6 @@ $api->version('v1',function($api){
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
     $api->post('addUser','App\Http\Controllers\homeController@insertUser');
     $api->post('addGroup','App\Http\Controllers\groupsController@insertGroup');
+    $api->post('addPoll','App\Http\Controllers\pollController@insertPoll');
+    $api->post('addUserGroup','App\Http\Controllers\groupsController@insertUserGroup');
 });

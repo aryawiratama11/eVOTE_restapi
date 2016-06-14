@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Poll;
+use Faker\Provider\DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
@@ -47,9 +48,18 @@ class pollController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function insertPoll(Request $request)
     {
-        //
+        $poll = new Poll();
+        $poll->pll_name = $request->pll_name;
+        $poll->description = $request->description;
+        $poll->editable = $request->editable;
+        $poll->deadline = $request->deadline;
+        $poll->save();
+        
+        
+
+        return $this->response->created();
     }
 
     /**

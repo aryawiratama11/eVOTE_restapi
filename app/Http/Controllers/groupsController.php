@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Group;
+use App\User_Group;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
@@ -60,12 +61,21 @@ class groupsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function insertUserGroup(Request $request)
     {
-        //
+        $group = Group::where('group_name',$request->group_name)->where('description',$request->description)->first();
+
+        $u_g = new User_Group();
+        $u_g->group_ID = $group->id;
+        $u_g->user_ID = $request->createdby;
+        $u_g->save();
+
+        return $this->response->created();
+
     }
 
     /**

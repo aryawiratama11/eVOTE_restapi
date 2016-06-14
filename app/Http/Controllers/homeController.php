@@ -45,6 +45,7 @@ class homeController extends Controller
     {
         $user = new User();
         $user->name = $request->name;
+        $user->tel = $request->tel;
         $user->password = bcrypt($request->password);
         $user->save();
 
