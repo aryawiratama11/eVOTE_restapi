@@ -29,13 +29,13 @@ class PollsTest extends TestCase
 //        $this->assertEquals(201,$response->status());
 //    }
 
-    public function testGetByName()
-    {
-
-        $response = $this->call('POST', '/api/getPollByName',
-            ['pll_name' => 'test poll', 'description' => 'testing!','createdby' => 9,'group'=> 1]);
-
-        $this->assertEquals(200,$response->status());
-
-    }
+//    public function testGetByName()
+//    {
+//
+//        $response = $this->call('POST', '/api/getPollByName',
+//            ['pll_name' => 'test poll', 'description' => 'testing!','createdby' => 9,'group'=> 1]);
+//
+//        $this->assertEquals(200,$response->status());
+//
+//    }
 }

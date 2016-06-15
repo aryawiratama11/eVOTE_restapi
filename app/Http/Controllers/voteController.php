@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Choice;
+use App\Vote;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -40,13 +41,7 @@ class voteController extends Controller
      */
     public function insertPollChoices(Request $request)
     {
-        
-//        $choice = new Choice();
-//        $choice->choice_ID = $request->choice_ID;
-//        $choice->poll_ID = $request->poll_ID;
-//        $choice->choice = $request->choice;
-//        $choice->save();
-        
+
         DB::table('choices')->insert($request->all());
 
         Log::info($request);
@@ -56,12 +51,25 @@ class voteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Request $request
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function show($id)
+    public function insertVote(Request $request)
     {
-        //
+        $date  = date('Y-m-d H:i:s');
+
+        Log::info($date);
+        Log::info($request->all());
+        $vote = new Vote();
+        $vote->v_ID = $request->v_ID;
+        $vote->user_ID = $request->user_ID;
+        $vote->poll_ID = $request->poll_ID;
+        $vote->choice_ID = $request->choice_ID;
+        $vote->time = $date;
+        $vote->save();
+
+        return $this->response->created();
     }
 
     /**

@@ -1,8 +1,10 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Facades\Log;
 
 class VoteTest extends TestCase
 {
@@ -12,7 +14,7 @@ class VoteTest extends TestCase
      * @return void
      */
 
-//    public function testInsertVote()
+//    public function testInsertChoice()
 //    {
 //        
 //        $response = $this->call('POST', '/api/addPollChoices',[
@@ -22,6 +24,19 @@ class VoteTest extends TestCase
 //        $this->assertEquals(200,$response->status());
 //
 //    }
+
+        public function testInsertVote()
+        {
+            
+            $response = $this->call('POST', '/api/addVote',
+                ['v_ID'=> 1,'user_ID' => 1,'poll_ID'=> 1,'choice_ID'=>1]
+            );
+
+            $this->assertEquals(201,$response->status());
+
+        }
+
+
 
  
 }

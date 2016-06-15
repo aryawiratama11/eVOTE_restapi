@@ -26,7 +26,7 @@ $api->version('v1',function($api){
     $api->get('getPollChoices/{poll_id}','App\Http\Controllers\pollController@getChoices');
     $api->get('getUserVote/{user_id}/poll/{poll_id}','App\Http\Controllers\homeController@getVote');
 
-
+    $api->post('addVote','App\Http\Controllers\voteController@insertVote');
     $api->post('getPollByName','App\Http\Controllers\pollController@getPollByName');
     $api->post('authenticate','App\Http\Controllers\homeController@authenticate');
     $api->post('addUser','App\Http\Controllers\homeController@insertUser');

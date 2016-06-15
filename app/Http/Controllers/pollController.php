@@ -59,14 +59,13 @@ class pollController extends Controller
      */
     public function insertPoll(Request $request)
     {
+        
         $poll = new Poll();
         $poll->pll_name = $request->pll_name;
         $poll->description = $request->description;
         $poll->editable = $request->editable;
         $poll->deadline = $request->deadline;
         $poll->save();
-        
-        
 
         return $this->response->created();
     }
