@@ -27,6 +27,33 @@ class GroupsTest extends TestCase
 //
 //        $this->assertEquals(201,$response->status());
 //    }
-    
+
+//    public function testInsertGrpAndUsr()
+//    {
+//
+//        $response = $this->call('POST', '/api/addUsersToGroup',
+//            [['group_ID'=> 1 , 'user_ID'=> 7],['group_ID'=> 1 , 'user_ID'=> 6]]);
+//
+//        $this->assertEquals(201,$response->status());
+//    }
+
+    public function testgetUsersNinGroup()
+    {
+
+        $group_id= 1;
+        $response = $this->call('GET', '/api/getUsersNinGroup/'.$group_id);
+
+        $this->assertEquals(200, $response->status());
+    }
+
+    public function testGetUsersInGroup()
+    {
+
+        $group_id= 1;
+        $response = $this->call('GET', '/api/getGroupUsers/'.$group_id);
+
+        $this->assertEquals(200, $response->status());
+    }
+
     
 }

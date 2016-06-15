@@ -62,7 +62,6 @@ class voteController extends Controller
         Log::info($date);
         Log::info($request->all());
         $vote = new Vote();
-        $vote->v_ID = $request->v_ID;
         $vote->user_ID = $request->user_ID;
         $vote->poll_ID = $request->poll_ID;
         $vote->choice_ID = $request->choice_ID;

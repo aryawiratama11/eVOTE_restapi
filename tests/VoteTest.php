@@ -25,16 +25,16 @@ class VoteTest extends TestCase
 //
 //    }
 
-        public function testInsertVote()
-        {
-            
-            $response = $this->call('POST', '/api/addVote',
-                ['v_ID'=> 1,'user_ID' => 1,'poll_ID'=> 1,'choice_ID'=>1]
-            );
-
-            $this->assertEquals(201,$response->status());
-
-        }
+//        public function testInsertVote()
+//        {
+//            
+//            $response = $this->call('POST', '/api/addVote',
+//                ['user_ID' => 1,'poll_ID'=> 1,'choice_ID'=>1]
+//            );
+//
+//            $this->assertEquals(201,$response->status());
+//
+//        }
 
 
 

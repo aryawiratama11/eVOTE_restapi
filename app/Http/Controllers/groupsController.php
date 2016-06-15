@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class groupsController extends Controller
 {
@@ -21,7 +22,7 @@ class groupsController extends Controller
     public function index($user_id)
     {
 
-        $users = User::find($user_id)->groups()->get()->toArray();
+        $groups = User::find($user_id)->groups()->get()->toArray();
 //        $users = DB::table('user_group')
 //        ->join('groups', 'groups.group_ID', '=', 'user_group.grp_id')
 //        ->join('users', 'users.id', '=', 'user_group.usr_id')
@@ -29,17 +30,22 @@ class groupsController extends Controller
 //        ->where('users.id',$user_id)
 //        ->get();
 
-        return $users;
+        return $groups;
     }
 
     /**
      * Show the form for creating a new resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function insertUsersIntoGroup(Request $request)
     {
-        //
+        DB::table('user_group')->insert($request->all());
+
+        Log::info($request);
+
+        return $this->response->created();
     }
 
     /**
@@ -81,24 +87,37 @@ class groupsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param $group_id
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function edit($id)
+    public function getGroupUsers($group_id)
     {
-        //
+
+        $users = DB::table('user_group')
+        ->join('groups', 'groups.id', '=', 'user_group.group_id')
+        ->join('users', 'users.id', '=', 'user_group.user_id')
+        ->select('users.*')
+        ->where('groups.id',$group_id)
+        ->get();
+
+        return $users;
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param $group_id
      * @return \Illuminate\Http\Response
+     * @internal param Request $request
+     * @internal param int $id
      */
-    public function update(Request $request, $id)
+    public function getUserNiGroup($group_id)
     {
-        //
+
+        $results = DB::select('SELECT * FROM users m LEFT OUTER JOIN user_group s ON (m.id = s.user_ID AND s.group_ID = :id) WHERE s.group_ID IS NULL', ['id' => $group_id]);
+        Log::info($results);
+        
+        return $results;
     }
 
     /**
