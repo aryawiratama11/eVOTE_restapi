@@ -27,6 +27,10 @@ $api->version('v1',function($api){
     $api->get('getUserVote/{user_id}/poll/{poll_id}','App\Http\Controllers\homeController@getVote');
     $api->get('getUsersNinGroup/{group_id}','App\Http\Controllers\groupsController@getUserNiGroup');
     $api->get('getGroupUsers/{group_id}','App\Http\Controllers\groupsController@getGroupUsers');
+    $api->get('getVoteSummary/{group_id}','App\Http\Controllers\voteController@getVoteSummary');
+    $api->get('removePoll/{poll_id}','App\Http\Controllers\pollController@destroy');
+    $api->get('removeGroup/{group_id}','App\Http\Controllers\groupsController@destroy');
+
 
     $api->post('addVote','App\Http\Controllers\voteController@insertVote');
     $api->post('getPollByName','App\Http\Controllers\pollController@getPollByName');

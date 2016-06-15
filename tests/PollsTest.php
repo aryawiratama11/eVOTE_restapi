@@ -38,4 +38,12 @@ class PollsTest extends TestCase
 //        $this->assertEquals(200,$response->status());
 //
 //    }
+
+    public function testRemovePoll()
+    {
+        $poll_id= 20;
+        $response = $this->call('GET', '/api/removePoll/'.$poll_id);
+
+        $this->assertEquals(201, $response->status());
+    }
 }

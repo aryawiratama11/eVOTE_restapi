@@ -11,4 +11,10 @@ class Choice extends Model
     protected $fillable = ['poll_ID', 'choice'];
 
     public $timestamps=false;
+
+    public function votes()
+    {
+        return $this->hasMany('App\Vote');
+
+    }
 }

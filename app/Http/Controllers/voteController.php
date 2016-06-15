@@ -26,11 +26,15 @@ class voteController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param $poll_id
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getVoteSummary($poll_id)
     {
-        //
+        $results = DB::select('SELECT COUNT(c.choice_ID) as amount,c.choice FROM `votes` v INNER JOIN choices c ON v.choice_ID = c.choice_ID WHERE v.poll_ID = :id GROUP BY c.choice_ID', ['id' => $poll_id]);
+
+
+        return $results;
     }
 
     /**

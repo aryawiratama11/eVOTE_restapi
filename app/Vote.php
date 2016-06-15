@@ -11,4 +11,8 @@ class Vote extends Model
     
     
     public $timestamps=false;
+
+    public function choice(){
+        return $this->belongsTo('App\Choice');
+    }
 }

@@ -117,12 +117,15 @@ class pollController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $poll_id
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function destroy($id)
+    public function destroy($poll_id)
     {
-        //
+        DB::table('polls')->where('id',$poll_id)->delete();
+
+        return $this->response->created();
     }
 
     public function getChoices($poll_ID)

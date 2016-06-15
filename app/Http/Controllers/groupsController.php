@@ -123,11 +123,14 @@ class groupsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $group_id
      * @return \Illuminate\Http\Response
+     * @internal param int $id
      */
-    public function destroy($id)
+    public function destroy($group_id)
     {
-        //
+        DB::table('groups')->where('id',$group_id)->delete();
+
+        return $this->response->created();
     }
 }

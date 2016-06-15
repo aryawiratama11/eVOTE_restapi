@@ -36,6 +36,14 @@ class VoteTest extends TestCase
 //
 //        }
 
+        public function testgetVoteSummary()
+        {
+            $poll_id= 1;
+            $response = $this->call('GET', '/api/getVoteSummary/'.$poll_id);
+
+            $this->assertEquals(200, $response->status());
+        }
+
 
 
  
